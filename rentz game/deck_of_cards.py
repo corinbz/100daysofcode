@@ -40,6 +40,22 @@ def test():
 	print(player4)
 
 
+#Avoind taking hands script.
+"""
+-divide the hand in suits and put it in ascending order
+-if the card value is lower or equal to 4 put it in premium group
+-rest of the group is standard.
+-try to get rid of the cards with the same colour that are the fewest and the lowest
+**** Make algorithm for hand to start with? score it.
+-
+
+"""
+
+def ai_acool_first(player):
+	# organize cards in 4 groups after colour
+	
+
+
 
 draw_card(13,player1)
 # print(len(deck_used))
