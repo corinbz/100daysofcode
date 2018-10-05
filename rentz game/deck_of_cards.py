@@ -15,13 +15,14 @@ def make_deck():
 
 	return deck
 
+# players hands
 deck_used = make_deck()
 player1 = []
 player2 = []
 player3 = []
 player4 = []
 
-# draw a random card (pop it)
+# function for dealing the cards to players (pop it)
 def draw_card(cards_to_draw,player):
 
 	temp = cards_to_draw
@@ -32,16 +33,11 @@ def draw_card(cards_to_draw,player):
 		temp_player.append(deck_used.pop(rand_card))
 		temp -= 1
 
-
-
-
 def test():
 	print(player1)
 	print(player2)
 	print(player3)
 	print(player4)
-
-
 
 
 
