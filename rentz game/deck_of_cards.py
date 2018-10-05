@@ -25,16 +25,14 @@ def draw_card(cards_to_draw):
 	
 	while temp > 0:
 		rand_card = random.randint(0,len(deck_used))
-		print(deck_used.pop(rand_card))
+		drawed_card.append(deck_used.pop(rand_card))
 		temp -= 1
 
 
 
 
 def test():
-	print(len(deck_used))
-	# pass
-
+	print(drawed_card)
 
 
 
