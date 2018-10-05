@@ -16,26 +16,39 @@ def make_deck():
 	return deck
 
 deck_used = make_deck()
-drawed_card = []
+player1 = []
+player2 = []
+player3 = []
+player4 = []
 
 # draw a random card (pop it)
-def draw_card(cards_to_draw):
+def draw_card(cards_to_draw,player):
 
 	temp = cards_to_draw
+	temp_player = player
 	
 	while temp > 0:
-		rand_card = random.randint(0,len(deck_used))
-		drawed_card.append(deck_used.pop(rand_card))
+		rand_card = random.randint(0,len(deck_used)-1)
+		temp_player.append(deck_used.pop(rand_card))
 		temp -= 1
 
 
 
 
 def test():
-	print(drawed_card)
+	print(player1)
+	print(player2)
+	print(player3)
+	print(player4)
 
 
 
-make_deck()
-draw_card(2)
+
+
+draw_card(13,player1)
+# print(len(deck_used))
+draw_card(13,player2)
+draw_card(13,player3)
+draw_card(13,player4)
+
 test()
