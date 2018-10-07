@@ -2,14 +2,10 @@ import random
 
 
 
-player1 = []
-player2 = []
-player3 = []
-player4 = []
-# Create the deck of cards with suits and values (for loop?)
+# Create the Card class with value and suit arguments
 class Card:
 
-	def __init__(self,value,suit):
+	def __init__(self, value, suit):
 
 		self.value = value
 		self.suit = suit
@@ -28,64 +24,58 @@ class Card:
 			self.value = self.value
 
 		print ("{} of {}".format(self.value,self.suit))
-
-
-	# function for dealing the cards to players (pop it)
-	# def draw_card(cards_to_draw,player):
-
-	# 	temp = cards_to_draw
-	# 	temp_player = player
 		
-	# 	while temp > 0:
-	# 		rand_card = random.randint(0,len(deck_used)-1)
-	# 		temp_player.append(deck_used.pop(rand_card))
-	# 		temp -= 1
+
 
 
 class Deck:
 
 	def __init__(self):
+
 		self.cards = []
 		self.make_deck()
 
 
 	def make_deck(self):
+
 		for s in ["Spades", "Clubs", "Hearts", "Diamonds"]:
 			for v in range(2,15):
 				self.cards.append(Card(v,s))
+
+	def deal_hand(self):
+
+		rand_card = random.randint(0, len(self.cards) - 1)
+		card_dealt = self.cards.pop(rand_card)
+		return card_dealt
+
 
 	def show(self):
 		for c in self.cards:
 			c.show()
 
+class Player:
 
+	def __init__(self):
+
+		self.hand = []
+
+	def draw_cards(self, deck, number_cards):
+		for c in range(number_cards):
+			card = deck.deal_hand()
+			if card:
+				self.hand.append(card)
+			else:
+				return False
+
+	def show_hand(self):
+		for c in self.hand:
+			c.show()
 
 pachet = Deck()
-pachet.show()
-
-
-	# def test():
-	# 	print(player1)
-	# 	print(player2)
-	# 	print(player3)
-	# 	print(player4)
 
 
 
-# def ai_acool_first(player):
-# 	# organize cards in 4 groups after colour
-# 	hand=player
-# 	Spades=[]
-# 	Clubs=[]
-# 	Hearts=[]
-# 	Diamonds=[]
 
-# 	def order_cards(suit):
-# 		for s in hand:
-# 			if suit in hand:
-# 				suit.append(hand[s])
-# 		print(suit)
-
-# 	order_cards("Spades")
-
-
+guy = Player()
+guy.draw_cards(pachet, 3)
+guy.show_hand()
