@@ -19,18 +19,9 @@ def game():
 	cow = 0
 	bull = 0
 
-	# for n in range(4):
-	# 	cow = 0
-	# 	bull = 0
-	# 	if number[n] == user_input[n]:
-	# 		cow += 1
-	# 	elif user_input[n] in number:
-	# 		bull += 1
-	# print(cow, bull)
-
 	while user_input != number:
-			cow = 0
-			bull = 0
+		cow = 0
+		bull = 0
 		user_input = str(input("Please make another try: "))
 		for n in range(4):
 			if number[n] == user_input[n]:
@@ -39,6 +30,7 @@ def game():
 				bull += 1
 		print(cow, bull)
 
+	print("You guessed it.")
 
 
 
