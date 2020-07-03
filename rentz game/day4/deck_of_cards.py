@@ -45,8 +45,7 @@ class Deck:
 	def deal_hand(self):
 
 		rand_card = random.randint(0, len(self.cards) - 1)
-		card_dealt = self.cards.pop(rand_card)
-		return card_dealt
+		return self.cards.pop(rand_card)
 
 
 	def show(self):
@@ -60,7 +59,7 @@ class Player:
 		self.hand = []
 
 	def draw_cards(self, deck, number_cards):
-		for c in range(number_cards):
+		for _ in range(number_cards):
 			card = deck.deal_hand()
 			if card:
 				self.hand.append(card)

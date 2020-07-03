@@ -1,12 +1,7 @@
 import random
 
-a = []
-b = []
-
-for x in range(10):
-	a.append(random.randint(1,5))
-for x in range(15):
-	b.append(random.randint(1,5))
+a = [random.randint(1,5) for _ in range(10)]
+b = [random.randint(1,5) for _ in range(15)]
 
 print(a)
 print(b)

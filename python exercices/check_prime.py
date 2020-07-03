@@ -6,7 +6,5 @@ def is_prime(num):
 			break
 		else:
 			continue
-			print("The number is prime!")
-			break
 
 is_prime(895)
