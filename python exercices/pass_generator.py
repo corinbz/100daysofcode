@@ -9,7 +9,7 @@ alp = alp.replace(" ","")
 pswd_len = 10
 pwd = ""
 
-for i in range(pswd_len):
+for _ in range(pswd_len):
 	char = random.choice(alp)
 	pwd += char
 print(pwd)

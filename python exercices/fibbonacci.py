@@ -1,11 +1,10 @@
 def fib(nmr):
 	li = [1]
-	if nmr == 1:
-		print(li)
-	else:
+	if nmr != 1:
 		li = [1,1]
 		for x in range(1, nmr-1):
 			li.append(li[x-1]+ li[x])
-		print(li)
+
+	print(li)
 
 fib(7)
